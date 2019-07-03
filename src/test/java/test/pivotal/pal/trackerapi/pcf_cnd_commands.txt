@@ -1,0 +1,49 @@
+gradlew cloudNativeDeveloperSimpleApp -PserverUrl=https://pal-tracker-grouchy-genet.cfapps.io
+
+
+
+gradlew cloudNativeDeveloperCloudFoundry -PserverUrl=https://pal-tracker-exhausted-warthog.cfapps.io
+cf push pal-tracker -p ./build/libs/pal-tracker.jar --random-route --no-start
+gradlew cloudNativeDeveloperReviewPipeline -PreviewUrl=https://pal-tracker-santosh-ramita.cfapps.io
+
+cf logs pal-tracker --recent
+
+
+cf set-env pal-tracker WELCOME_MESSAGE "Hello from Cloud Foundry"
+
+
+cf map-route pal-tracker pal-tracker-ramita cfapps.io
+
+
+########gradle location not found########
+
+gradle wrapper
+
+gradlew clen build
+############# To change permission#########
+
+git ls-tree HEAD
+
+git update-index --chmod=+x gradlew
+
+Git commit
+git push
+
+
+#####################
+
+
+Route add
+
+cf check-route pal-tracker-ramita cfapps.io
+
+7333449c364c10c63699bc6e96a0d27d8c0df699
+
+######
+
+Git status
+git add .
+git commit -m "message"
+git push origin master --tags
+
+
