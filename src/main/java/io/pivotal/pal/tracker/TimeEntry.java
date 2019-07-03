@@ -93,6 +93,9 @@ public TimeEntry(long projectId,long userId,LocalDate date,int hours){
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + hours;
         return result;
+
+
+
     }
 
     @Override
